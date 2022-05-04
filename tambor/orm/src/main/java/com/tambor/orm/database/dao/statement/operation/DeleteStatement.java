@@ -1,51 +1,48 @@
 package com.tambor.orm.database.dao.statement.operation;
 
 
+import java.util.ArrayList;
+
 import com.tambor.orm.database.dao.model.FieldTO;
 import com.tambor.orm.database.dao.model.TransferObject;
 import com.tambor.orm.database.dao.statement.transacts.Deletable;
 
-import java.util.ArrayList;
-
-
 public class DeleteStatement implements Deletable {
-
-    private final TransferObject to;
-
-    public DeleteStatement(TransferObject feature) {
+    
+	private TransferObject to;
+    
+    public DeleteStatement(TransferObject feature){
         this.to = feature;
     }
-
     public StringBuilder createStatement() {
-        if (to != null) {
-            StringBuilder result = new StringBuilder();
-            ArrayList<FieldTO> pks = to.getPrimaryKeys();
-            if (pks != null) {
-                StringBuilder cws = where.createWhereStatement(pks);
-                if (cws != null && !cws.toString().equalsIgnoreCase("")) {
+        if(to!=null){
+             StringBuilder result = new StringBuilder();
+             ArrayList<FieldTO> pks = to.getPrimaryKeys();
+             if(pks!=null){
+                 StringBuilder cws = where.createWhereStatement(pks);
+                 if(cws!=null && !cws.toString().equalsIgnoreCase("")){
                     String tableName = to.getTableName();
-                    if (tableName != null && !tableName.equalsIgnoreCase("")) {
-                        result.append("DELETE ");
-                        result.append("FROM ");
-                        result.append(tableName);
-                        result.append(this.getParameters());
-                        result.append(cws);
-                        return result;
-                    } else {
-                        throw new NullPointerException("invalid table name = '" + tableName + "'");
-                    }
-                } else {
-                    throw new NullPointerException("invalid where clause");
-                }
-            } else {
-                throw new NullPointerException("impossible make the where " +
-                        "clause without primary keys");
-            }
+                     if(tableName!=null && !tableName.equalsIgnoreCase("")){
+                    	 result.append("DELETE ");
+                    	 result.append("FROM ");
+                         result.append(tableName);
+                         result.append(this.getParameters());
+                         result.append(cws);
+                         return result;
+                     }else{
+                         throw new NullPointerException("invalid table name = '" + tableName + "'");
+                     }
+                 }else{
+                     throw new NullPointerException("invalid where clause");
+                 }
+             }else{
+                 throw new NullPointerException("impossible make the where " +
+                                                "clause without primary keys");
+             }
         }
         return null;
     }
-
-    public StringBuilder getParameters() {
+    public StringBuilder getParameters(){
         StringBuilder result = new StringBuilder();
         return result;
     }

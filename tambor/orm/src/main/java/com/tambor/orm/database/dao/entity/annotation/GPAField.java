@@ -5,7 +5,6 @@ import java.lang.annotation.RetentionPolicy;
 
 @Retention(RetentionPolicy.RUNTIME)
 public @interface GPAField {
-    String name();
-
-    int type();
+	String name();
+	int type();
 }

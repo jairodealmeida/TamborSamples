@@ -1,53 +1,53 @@
 package com.tambor.orm.database.dao.statement.operation;
 
 public class StatementArguments {
-    private String tableName;
-    private String[] collumns;
-    private String whereClause;
-    private String maxField;
-    private String orderByClause;
+	private String tableName;
+	private String[] collumns;
+	private String whereClause;
+	private String maxField;
+	private String orderByClause;
+	
+	public StatementArguments(String tableName){
+		this.tableName = tableName;
+	}
+	
+	public String getTableName() {
+		return tableName;
+	}
 
-    public StatementArguments(String tableName) {
-        this.tableName = tableName;
-    }
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+	}
 
-    public String getTableName() {
-        return tableName;
-    }
+	public String[] getCollumns() {
+		return collumns;
+	}
 
-    public void setTableName(String tableName) {
-        this.tableName = tableName;
-    }
+	public void setCollumns(String[] collumns) {
+		this.collumns = collumns;
+	}
 
-    public String[] getCollumns() {
-        return collumns;
-    }
+	public String getWhereClause() {
+		return whereClause;
+	}
 
-    public void setCollumns(String[] collumns) {
-        this.collumns = collumns;
-    }
+	public void setWhereClause(String whereClause) {
+		this.whereClause = whereClause;
+	}
 
-    public String getWhereClause() {
-        return whereClause;
-    }
+	public String getMaxField() {
+		return maxField;
+	}
 
-    public void setWhereClause(String whereClause) {
-        this.whereClause = whereClause;
-    }
+	public void setMaxField(String maxField) {
+		this.maxField = maxField;
+	}
 
-    public String getMaxField() {
-        return maxField;
-    }
+	public String getOrderByClause() {
+		return orderByClause;
+	}
 
-    public void setMaxField(String maxField) {
-        this.maxField = maxField;
-    }
-
-    public String getOrderByClause() {
-        return orderByClause;
-    }
-
-    public void setOrderByClause(String orderByClause) {
-        this.orderByClause = orderByClause;
-    }
+	public void setOrderByClause(String orderByClause) {
+		this.orderByClause = orderByClause;
+	}
 }

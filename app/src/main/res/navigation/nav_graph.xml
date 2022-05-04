@@ -25,4 +25,12 @@
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/LoginFragment"
+        android:name="com.tambor.samples.ui.login.LoginFragment"
+        android:label="@string/title_activity_login"
+        tools:layout="@layout/fragment_login">
+
+
+    </fragment>
 </navigation>

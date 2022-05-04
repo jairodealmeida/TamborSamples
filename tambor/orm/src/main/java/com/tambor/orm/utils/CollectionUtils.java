@@ -4,16 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CollectionUtils {
-
-    /**
+	
+	 /**
      * Splits the list.
-     *
-     * @param <T>  the type of list element
-     * @param list the list
-     * @param size the piece size
+     * 
+     * @param <T>
+     *            the type of list element
+     * @param list
+     *            the list
+     * @param size
+     *            the piece size
      * @return the split lists.
-     * @throws NullPointerException     if the list parameter is null
-     * @throws IllegalArgumentException if the size parameter is less than 1
+     * @throws NullPointerException
+     *             if the list parameter is null
+     * @throws IllegalArgumentException
+     *             if the size parameter is less than 1
      */
     public static <T> List<List<T>> split(List<T> list, int size)
             throws NullPointerException, IllegalArgumentException {
@@ -22,7 +27,7 @@ public class CollectionUtils {
         }
         if (size <= 0) {
             throw new IllegalArgumentException(
-                    "The size parameter must be more than 0.");
+                "The size parameter must be more than 0.");
         }
         int num = list.size() / size;
         int mod = list.size() % size;
@@ -35,4 +40,4 @@ public class CollectionUtils {
         }
         return ret;
     }
-}
+ }

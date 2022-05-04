@@ -1,11 +1,14 @@
 package com.tambor.samples;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.view.Gravity;
 import android.view.View;
 
 import androidx.navigation.NavController;
@@ -13,15 +16,26 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.tambor.samples.contract.ApplicationComponent;
+import com.tambor.samples.contract.DaggerUserComponent;
+import com.tambor.samples.contract.UserComponent;
+import com.tambor.samples.database.models.User;
 import com.tambor.samples.databinding.ActivityMainBinding;
+import com.tambor.samples.module.UserModule;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+
+    private UserComponent userComponent;
+    private User user;
+    private SharedPreferences pref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +57,39 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        userComponent = DaggerUserComponent.builder()
+                .applicationComponent(getApplicationComponent())
+                .userModule(new UserModule()).build();
+        user = userComponent.providerUser();
+        userComponent.inject(user);
+
+        //Settings session
+        user.setUserName("Jairo de Almeida");
+        //Toast.makeText(this,"User: " + user.getUserName(),Toast.LENGTH_SHORT).show();
+        /*View parentLayout = findViewById(android.R.id.content);
+        Snackbar.make(parentLayout,
+                "User: " + user.getUserName(),
+                Snackbar.LENGTH_LONG)
+                .setAction("Info", null).show();*/
+        setupPrefSettings(user);
+        showMessage("User: " + user.getUserName());
+    }
+    private void showMessage(String message){
+        View parentLayout = binding.getRoot();
+        Snackbar snack = Snackbar.make(parentLayout, message, Snackbar.LENGTH_LONG);
+        snack.setAction(R.string.information, null);
+        View view = snack.getView();
+        FrameLayout.LayoutParams params =(FrameLayout.LayoutParams)view.getLayoutParams();
+        params.gravity = Gravity.TOP;
+        view.setLayoutParams(params);
+        snack.show();
+    }
+    private void setupPrefSettings(User user){
+        pref = userComponent.providePreferences();
+        pref.edit().putString(User.SESSION_KEY, user.getFullName()).apply();
+    }
+    private ApplicationComponent getApplicationComponent(){
+        return ((AndroidApplication)getApplication()).getApplicationComponent();
     }
 
     @Override

@@ -6,6 +6,6 @@ import java.lang.annotation.RetentionPolicy;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface GPAEntity {
 
-    String name();
-
+	String name();
+	
 }

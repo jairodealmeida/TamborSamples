@@ -5,127 +5,128 @@ import com.tambor.orm.database.dao.entity.Entity;
 import com.tambor.orm.database.dao.entity.annotation.GPAEntity;
 import com.tambor.orm.database.dao.entity.annotation.GPAField;
 
-
 @GPAEntity(name = "backupsmobile")
 public class BackupMobile extends Entity {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @GPAField(name = "checked", type = Entity.BOOLEAN)
-    private boolean checked;
-
-    @GPAField(name = "codigo", type = Entity.LONG)
-    private Long codigo;
-
-    @GPAField(name = "data", type = Entity.VARCHAR)
-    private String data;
-
-    @GPAField(name = "dataenvio", type = Entity.VARCHAR)
-    private String dataenvio;
-
-
-    @GPAField(name = "usuarioid", type = Entity.LONG)
-    private Long usuarioid;
-
-    @GPAField(name = "caminhooarquivolocal", type = Entity.VARCHAR)
-    private String caminhooarquivolocal;
-
-    @GPAField(name = "caminhooarquivoservidor", type = Entity.VARCHAR)
-    private String caminhooarquivoservidor;
-
-    public BackupMobile() {
-        super();
-    }
-
-
-    public BackupMobile(Long codigo, String data, String dataenvio,
-                        Long usuarioid, String caminhooarquivolocal, String caminhooarquivoservidor) {
-        super();
-
-        this.codigo = codigo;
-        this.data = data;
-        this.dataenvio = dataenvio;
-        this.usuarioid = usuarioid;
-        this.caminhooarquivolocal = caminhooarquivolocal;
-        this.caminhooarquivoservidor = caminhooarquivoservidor;
-    }
-
-
-    public Long getCodigo() {
-        return codigo;
-    }
+	@GPAField(name = "checked", type = Entity.BOOLEAN)
+	private boolean checked;
+	
+	@GPAField(name = "codigo", type = Entity.LONG)
+	private Long codigo;
+	
+	@GPAField(name = "data", type = Entity.VARCHAR)
+	private String data;  
+	
+	@GPAField(name = "dataenvio", type = Entity.VARCHAR)
+	private String dataenvio;
+	
+	
+	@GPAField(name = "usuarioid", type = Entity.LONG)
+	private Long usuarioid;
+	
+	@GPAField(name = "caminhooarquivolocal", type = Entity.VARCHAR)
+	private String  caminhooarquivolocal; 
+	
+	@GPAField(name = "caminhooarquivoservidor", type = Entity.VARCHAR)
+	private String  caminhooarquivoservidor;
+	
+	public BackupMobile(){
+		super();
+	}
+	
+	
+	public BackupMobile( Long codigo, String data, String dataenvio,
+			Long usuarioid, String caminhooarquivolocal, String caminhooarquivoservidor) {
+		super();
+	
+		this.codigo = codigo;
+		this.data = data;
+		this.dataenvio = dataenvio;
+		this.usuarioid = usuarioid;
+		this.caminhooarquivolocal = caminhooarquivolocal;
+		this.caminhooarquivoservidor = caminhooarquivoservidor;
+	}
 
 
-    public void setCodigo(Long codigo) {
-        this.codigo = codigo;
-    }
+	
+
+	public Long getCodigo() {
+		return codigo;
+	}
 
 
-    public String getData() {
-        return data;
-    }
+	public void setCodigo(Long codigo) {
+		this.codigo = codigo;
+	}
 
 
-    public void setData(String data) {
-        this.data = data;
-    }
+	public String getData() {
+		return data;
+	}
 
 
-    public String getDataenvio() {
-        return dataenvio;
-    }
+	public void setData(String data) {
+		this.data = data;
+	}
 
 
-    public void setDataenvio(String dataenvio) {
-        this.dataenvio = dataenvio;
-    }
+	public String getDataenvio() {
+		return dataenvio;
+	}
 
 
-    public Long getUsuarioid() {
-        return usuarioid;
-    }
+	public void setDataenvio(String dataenvio) {
+		this.dataenvio = dataenvio;
+	}
 
 
-    public void setUsuarioid(Long usuarioid) {
-        this.usuarioid = usuarioid;
-    }
+	
+
+	public Long getUsuarioid() {
+		return usuarioid;
+	}
 
 
-    public String getCaminhooarquivolocal() {
-        return caminhooarquivolocal;
-    }
+	public void setUsuarioid(Long usuarioid) {
+		this.usuarioid = usuarioid;
+	}
 
 
-    public void setCaminhooarquivolocal(String caminhooarquivolocal) {
-        this.caminhooarquivolocal = caminhooarquivolocal;
-    }
+	public String getCaminhooarquivolocal() {
+		return caminhooarquivolocal;
+	}
 
 
-    public String getCaminhooarquivoservidor() {
-        return caminhooarquivoservidor;
-    }
+	public void setCaminhooarquivolocal(String caminhooarquivolocal) {
+		this.caminhooarquivolocal = caminhooarquivolocal;
+	}
 
 
-    public void setCaminhooarquivoservidor(String caminhooarquivoservidor) {
-        this.caminhooarquivoservidor = caminhooarquivoservidor;
-    }
+	public String getCaminhooarquivoservidor() {
+		return caminhooarquivoservidor;
+	}
 
-    @Override
-    public Long getId() {
-        return codigo;
-    }
 
-    @Override
-    public void setId(Long id) {
-        codigo = id;
+	public void setCaminhooarquivoservidor(String caminhooarquivoservidor) {
+		this.caminhooarquivoservidor = caminhooarquivoservidor;
+	}
 
-    }
 
-    public boolean isChecked() {
-        return checked;
-    }
-
-    public void setChecked(boolean checked) {
-        this.checked = checked;
-    }
+	@Override
+	public void setId(Long id) {
+		codigo = id;
+		
+	}
+	@Override
+	public Long getId() {
+		return codigo;
+	}
+	public boolean isChecked() {
+		return checked;
+	}
+	public void setChecked(boolean checked) {
+		this.checked = checked;
+	}
 }
