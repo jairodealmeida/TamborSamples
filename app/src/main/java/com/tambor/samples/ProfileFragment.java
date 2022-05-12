@@ -1,13 +1,20 @@
 package com.tambor.samples;
 
+import android.app.Fragment;
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.tambor.samples.contract.ApplicationComponent;
+import com.tambor.samples.database.models.User;
+
+import javax.inject.Inject;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,8 +23,8 @@ import android.view.ViewGroup;
  */
 public class ProfileFragment extends Fragment {
 
-
-    private UserViewModel userViewModel;
+    //@Inject
+    //private UserViewModel userViewModel;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -51,6 +58,7 @@ public class ProfileFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        //(ApplicationComponent) getApplicationContext()).appComponent.inject(this);
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -68,17 +76,13 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        userViewModel = new ViewModelProvider(requireActivity()).get(UserViewModel.class);
+        /*userViewModel iewModelProvider(requireActivity()).get(UserViewModel.class);
         final NavController navController = Navigation.findNavController(view);
         userViewModel.user.observe(getViewLifecycleOwner(), (Observer<User>) user -> {
-            if (user != null) {
-                showWelcomeMessage();
-            } else {
                 navController.navigate(R.id.login_fragment);
-            }
-        });
+        });*/
     }
     private void showWelcomeMessage() {
-        ...
+       // ...
     }
 }

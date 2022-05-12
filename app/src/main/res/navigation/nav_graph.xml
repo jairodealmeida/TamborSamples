@@ -23,14 +23,38 @@
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            app:destination="@id/QuestIFragment" />
     </fragment>
+
+
     <fragment
+        android:id="@+id/QuestIFragment"
+        android:name="com.tambor.samples.QuestFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/quest_fragment">
+
+        <action
+            android:id="@+id/action_QuestFragment_toQuestListFragment"
+            app:destination="@id/QuestListTestFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/QuestListTestFragment"
+        android:name="com.tambor.samples.QuestListFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_quest_list_list">
+
+        <action
+            android:id="@+id/action_QuestListFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+
+    <!--fragment
         android:id="@+id/LoginFragment"
         android:name="com.tambor.samples.ui.login.LoginFragment"
         android:label="@string/title_activity_login"
         tools:layout="@layout/fragment_login">
 
 
-    </fragment>
+    </fragment-->
 </navigation>

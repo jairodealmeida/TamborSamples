@@ -1,21 +1,11 @@
 package com.tambor.samples;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.view.Gravity;
 import android.view.View;
 
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
+import com.google.android.material.snackbar.Snackbar;
 import com.tambor.samples.contract.ApplicationComponent;
 import com.tambor.samples.contract.DaggerUserComponent;
 import com.tambor.samples.contract.UserComponent;
@@ -26,7 +16,12 @@ import com.tambor.samples.module.UserModule;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -72,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 Snackbar.LENGTH_LONG)
                 .setAction("Info", null).show();*/
         setupPrefSettings(user);
-        showMessage("User: " + user.getUserName());
+        //showMessage("User: " + user.getUserName());
     }
     private void showMessage(String message){
         View parentLayout = binding.getRoot();
@@ -89,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         pref.edit().putString(User.SESSION_KEY, user.getFullName()).apply();
     }
     private ApplicationComponent getApplicationComponent(){
-        return ((AndroidApplication)getApplication()).getApplicationComponent();
+        return ((MyApplication)getApplication()).getApplicationComponent();
     }
 
     @Override

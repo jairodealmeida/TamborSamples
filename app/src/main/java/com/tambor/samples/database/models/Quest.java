@@ -15,14 +15,44 @@ public class Quest extends Entity {
     @GPAField(name="desc", type = Entity.VARCHAR)
     private String desc;
 
+    @GPAField(name="value", type = Entity.BOOLEAN)
+    private Boolean value;
+
+
+    @GPAField(name="observation", type = Entity.VARCHAR)
+    private String observation;
+
+    public Boolean getValue() {
+        return value;
+    }
+
+    public void setValue(Boolean value) {
+        this.value = value;
+    }
+
+    public String getObservation() {
+        return observation;
+    }
+
+    public void setObservation(String observation) {
+        this.observation = observation;
+    }
+
     @GPAFieldBean(name="user", type = Entity.BEAN, clazz=User.class)
-    @Inject
+    //@Inject
      User user;
-    @Inject
+    //@Inject
     public Quest(){}
     /*public Quest(User user){
         this.user = user;
     }*/
+
+    public Quest(Integer id, String desc, Boolean value, String observation) {
+        this.id = id;
+        this.desc = desc;
+        this.value = value;
+        this.observation = observation;
+    }
 
     @Override
     public Long getId() {

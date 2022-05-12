@@ -6,7 +6,7 @@ import com.tambor.samples.contract.ApplicationComponent;
 import com.tambor.samples.contract.DaggerApplicationComponent;
 import com.tambor.samples.module.ApplicationModule;
 
-public class AndroidApplication  extends Application {
+public class MyApplication extends Application {
 
     private ApplicationComponent applicationComponent ;
 

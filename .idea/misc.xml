@@ -5,7 +5,15 @@
       <map>
         <entry key="..\:/Projetos/Android/TamborSamples/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Projetos/Android/TamborSamples/app/src/main/res/layout/activity_main.xml" value="0.2911458333333333" />
+        <entry key="..\:/Projetos/Android/TamborSamples/app/src/main/res/layout/blank_fragment.xml" value="0.2911458333333333" />
+        <entry key="..\:/Projetos/Android/TamborSamples/app/src/main/res/layout/content_main.xml" value="0.23899102180418982" />
         <entry key="..\:/Projetos/Android/TamborSamples/app/src/main/res/layout/fragment_first.xml" value="0.24166666666666667" />
+        <entry key="..\:/Projetos/Android/TamborSamples/app/src/main/res/layout/fragment_login.xml" value="0.19837537409149208" />
+        <entry key="..\:/Projetos/Android/TamborSamples/app/src/main/res/layout/fragment_profile.xml" value="0.20572916666666666" />
+        <entry key="..\:/Projetos/Android/TamborSamples/app/src/main/res/layout/fragment_quest_list.xml" value="0.23899102180418982" />
+        <entry key="..\:/Projetos/Android/TamborSamples/app/src/main/res/layout/fragment_quest_list_list.xml" value="0.2274476271911073" />
+        <entry key="..\:/Projetos/Android/TamborSamples/app/src/main/res/layout/fragment_second.xml" value="0.19837537409149208" />
+        <entry key="..\:/Projetos/Android/TamborSamples/app/src/main/res/layout/quest_fragment.xml" value="0.22" />
       </map>
     </option>
   </component>

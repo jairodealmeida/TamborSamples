@@ -22,4 +22,5 @@ public class ApplicationModule {
     public SharedPreferences providePreferences(){
         return this.app.getSharedPreferences(PREF_KEY, Context.MODE_PRIVATE);
     }
+
 }

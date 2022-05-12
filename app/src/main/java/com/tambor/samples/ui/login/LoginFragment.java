@@ -28,7 +28,7 @@ import com.tambor.samples.databinding.FragmentLoginBinding;
 import com.tambor.samples.R;
 
 public class LoginFragment extends Fragment {
-    public static String LOGIN_SUCCESSFUL = "LOGIN_SUCCESSFUL"
+    public static String LOGIN_SUCCESSFUL = "LOGIN_SUCCESSFUL";
     private LoginViewModel loginViewModel;
     private FragmentLoginBinding binding;
     private SavedStateHandle savedStateHandle;

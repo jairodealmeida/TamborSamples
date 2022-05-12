@@ -22,18 +22,23 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.tambor.samples.MyApplication;
 import com.tambor.samples.R;
 import com.tambor.samples.ui.login.LoginViewModel;
 import com.tambor.samples.ui.login.LoginViewModelFactory;
 import com.tambor.samples.databinding.ActivityLoginBinding;
 
+import javax.inject.Inject;
+
 public class LoginActivity extends AppCompatActivity {
 
+    //@Inject
     //private LoginViewModel loginViewModel;
     private ActivityLoginBinding binding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        //((MyApplication) getApplicationContext()).appComponent.inject(this);
         super.onCreate(savedInstanceState);
 
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
